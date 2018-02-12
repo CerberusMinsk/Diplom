@@ -17,10 +17,9 @@ library work;
 use work.matrix.all;
 
 entity SM is
-    generic (byte: natural := 4);
-    Port ( AA : in  Signed (byte-1 downto 1);
-           BB : in  Signed (byte-1 downto 1);
-           CC : out  in  Signed (byte-1 downto 1);
+    Port ( AA : in  matrix;
+           BB : in  matrix;
+           CC : out matrix;
 end SM;
 
 architecture Behavioral of SM is
