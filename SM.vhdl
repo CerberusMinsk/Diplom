@@ -1,8 +1,8 @@
 ----------------------------------------------------------------------------------
 
 package matrix is
-    Type matrix is array (natural range <>,
-                        natural range <>) of integer;
+    Type matrix is array (natural range 1 to 2,
+                        natural range 1 to 2) of integer;
 end matrix;
 
 package body matrix is
@@ -25,9 +25,9 @@ end SM;
 
 architecture Behavioral of SM is
 
-    procedure mult (signal AA: in matrix(1 to 2, 1 to 2);
-                    signal BB: in matrix(1 to 2, 1 to 2);
-                    signal CC: out matrix(1 to 2, 1 to 2)) is
+    procedure mult (signal AA: in matrix;
+                    signal BB: in matrix;
+                    signal CC: out matrix) is
 
                     variable temp: integer;
     
@@ -43,9 +43,9 @@ architecture Behavioral of SM is
                         end loop Z1;
     end mult;
 
-    signal AA: matrix(1 to 2, 1 to 2);
-    signal BB: matrix(1 to 2, 1 to 2);
-    signal CC: matrix(1 to 2, 1 to 2);
+    signal AA: matrix;
+    signal BB: matrix;
+    signal CC: matrix;
 
 begin
 
