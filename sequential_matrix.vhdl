@@ -27,7 +27,7 @@ architecture beh of test is
 
     procedure mult (signal AA: in liner;
                     signal BB: in liner;
-                    signal CC: out matrix) is
+                    signal CC: inout matrix) is
 
                     variable temp: integer;
                     
@@ -35,7 +35,9 @@ architecture beh of test is
                         Z1: for s in 1 to 2 loop
                             Z2: for p in 1 to 2 loop
                                 Z3: for q in 1 to 2 loop
-                                    CC(p, q):= CC(p, q) + (AA(p, s) * BB(s, q));
+                                    temp:=CC(p, q);
+                                    temp:= temp + (AA(p, s) * BB(s, q));
+                                    CC(p, q)<=temp;
                                 end loop Z3; 
                             end loop Z2;
                         end loop Z1;
