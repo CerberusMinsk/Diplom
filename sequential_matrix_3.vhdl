@@ -35,7 +35,8 @@ entity schema1 is
 component mult 
         port  ( A: in integer;
                 B: in integer;
-                C: inout integer);
+                CI: in integer;
+                C: out integer);
     end component;
         
 
