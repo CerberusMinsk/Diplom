@@ -17,13 +17,11 @@ use IEEE.NUMERIC_STD.all;
 entity mult is
     port  ( A: in integer;
             B: in integer;
-            CI: in integer;
-            C: out integer);
+            C: inout integer);
         end mult;
         architecture str of mult is
           begin
-            C := A * B;
-            C := C + CI;
+            C <= C + (A * B);        
           end str;
 
 -- schema1
